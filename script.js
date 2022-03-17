@@ -1,5 +1,5 @@
 setInterval(mostraHora, 1000);
-setInterval(atualizaImagem, 1000);
+const intervalo = setInterval(atualizaImagem, 1000);
 
 function mostraHora() {
     var clock = document.getElementById("clock");
@@ -62,10 +62,16 @@ function atualizaImagem() {
     }
 }
 
-function batsignalOn() {
+document.getElementById('btn').addEventListener('click', function batsignalOn() {
+
     let imagem = (document.getElementById("imagem").src =
         "https://www.catalannews.com/cache/com_zoo/images/Batman_batsenal_Marini_limpia_1_d76f19c6968407a4355ba67ba49c2459.jpg");
     let legenda = (document.getElementById("legenda").innerHTML =
         "Você chamou o Batman e ele veio");
-}
+
+    clearInterval(intervalo);
+});
+
+
+
 
